@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="navbar">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" id="agregarNuevo" data-toggle="modal" data-target="#modalAgregar">Agregar Nuevo<span class="sr-only">(current)</span></a>
+        <a class="nav-link btn" id="agregarNuevo" data-toggle="modal" data-target="#modalAgregar">Agregar Nuevo<span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

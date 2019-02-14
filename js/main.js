@@ -1,7 +1,7 @@
 $(document).ready( ()=>{
 	//CARGAR LOS DATOS DE LA TABLA
 	loadData();
-	prom();
+	
 	//EVENTO CLICK EN EL BOTON VER MAS 
 	$('.main').find('#table-container').on('click','#vermas', (e)=> {
 		verMas($(e.target).parent().parent().find('#id').text());
@@ -45,6 +45,7 @@ function loadData(query){
 		data:{query : query},
 		success: function(resp){
 			$("#table-container").html(resp);
+			prom();
 		}
 	});
 }
@@ -144,9 +145,9 @@ function prom(){
 		url: "php/calculos.php",
 		success: function (resp) {
 			var valor = resp.split("|");
-			$('#estadisticas').find('#prom').text(valor[0]);
-			$('#estadisticas').find('#porcent').text(valor[1]);
-			$('#estadisticas').find('#porcentm').text(100-valor[1]);
+			$('#estadisticas').find('#prom').text(parseFloat(valor[0]).toFixed(1));
+			$('#estadisticas').find('#porcent').text(parseFloat(valor[1]).toFixed(1));
+			$('#estadisticas').find('#porcentm').text(100-(parseFloat(valor[1])).toFixed(1));
 		}
 	});
 }
